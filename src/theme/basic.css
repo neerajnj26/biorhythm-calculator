@@ -1,0 +1,31 @@
+/* Login Box */
+
+.login-box{
+    box-shadow: none;
+    height: 100rem;
+    width: 100%;
+    margin: 150px auto;
+}
+
+.login-title{
+    font-family: 'Roboto';
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.login-button {
+	--ion-color-primary: #0161b0;
+	--ion-color-primary-rgb: 1,97,176;
+	--ion-color-primary-contrast: #ffffff;
+	--ion-color-primary-contrast-rgb: 255,255,255;
+	--ion-color-primary-shade: #01559b;
+	--ion-color-primary-tint: #1a71b8;
+
+    position: relative;
+    top: 1.5rem;
+}
+
+
+
+/* Nav Bar */
+
