@@ -1,8 +1,16 @@
 /* Login Box */
+.logo-img{
+    height: 75px;
+    position: relative;
+    top: 75px;
+    right: 125px;
+}
 
 .login-box{
+    position: relative;
+    bottom: 50px;
     box-shadow: none;
-    height: 100rem;
+    height: 75rem;
     width: 100%;
     margin: 150px auto;
 }
@@ -23,6 +31,28 @@
 
     position: relative;
     top: 1.5rem;
+}
+
+.visibility-button{
+    --ion-color-primary: #ffff;
+	--ion-color-primary-rgb: 1,97,176;
+	--ion-color-primary-contrast: #000;
+	--ion-color-primary-contrast-rgb: 255,255,255;
+	--ion-color-primary-shade: #01559b;
+	--ion-color-primary-tint: #1a71b8;
+
+    position: relative;
+    top: 2rem;
+}
+
+.multi-text{
+    text-align: left;
+    position: relative;
+    top: 124px;
+    left: 102px;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 

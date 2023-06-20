@@ -39,11 +39,9 @@ const MenuBar = () => {
             <IonTitle>MVCS</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">
-          
-        </IonContent>
       </IonPage>
     </>
   );
 }
 export default MenuBar;
+

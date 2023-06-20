@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import "../theme/basic.css"
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonInput, IonItem, IonLabel, IonNote } from '@ionic/react';
+import { IonIcon } from '@ionic/react';
+import {eye , eyeOff} from "ionicons/icons"
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonLabel, IonNote } from '@ionic/react';
 
 const LoginBox = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+      };
 
     const handleClick = () => {
         console.log("User Tried to Login with username: "+username+" and Password: "+password)
@@ -18,12 +25,21 @@ const LoginBox = () => {
             <IonCardContent>
                 <IonItem>
                     <IonLabel position="stacked">Web Account</IonLabel>
-                    <IonInput type="text" value={username} onIonChange={(event)=> setUsername(event.detail.value)}></IonInput>
+                    <IonInput type='text' value={username} onIonChange={(event)=> setUsername(event.detail.value)}></IonInput>
                     <IonNote slot='helper'>Enter Valid Username</IonNote>
                 </IonItem>
                 <IonItem>
                     <IonLabel position="stacked">Password</IonLabel>
-                    <IonInput type="password" value={password} onIonChange={(event)=> setPassword(event.detail.value)}></IonInput>
+                    <IonInput 
+                        type={showPassword? 'text' : 'password'} 
+                        value={password} onIonChange={(event)=> setPassword(event.detail.value)}> 
+                    </IonInput>
+                    <IonButton 
+                        className='visibility-button' 
+                        slot='end' 
+                        onClick={togglePasswordVisibility}>
+                        <IonIcon icon={showPassword ? eye : eyeOff} />
+                    </IonButton>
                     <IonNote slot='helper'>Enter Your Password</IonNote>
 
                 </IonItem>
