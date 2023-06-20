@@ -3,7 +3,7 @@ import React from "react";
 
 const Logo =() => {
     return (
-        <IonImg className="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYrj1frOj4VQBoBk2TtKzEMV6Pm8T8W7pFIRJFvNY&s" alt="LogoBSNL" />
+        <IonImg className="logo-img" src="https://1.bp.blogspot.com/-WLUaHeseza4/XQDZ8i2vCYI/AAAAAAAAAvo/lTLe0DnI9p0PkqMYxEY1L6ztO3if39IJwCLcBGAs/s1600/bsnl-logo.jpeg" alt="LogoBSNL" />
     )
 }
 

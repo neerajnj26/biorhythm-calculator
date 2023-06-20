@@ -1,61 +1,93 @@
+/* Header */
+
+.multi-text{
+    font-size: 1.25rem;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Login Box */
+
 .logo-img{
-    height: 75px;
-    position: relative;
-    top: 75px;
-    right: 125px;
+    height: 3.125rem;
 }
 
 .login-box{
-    position: relative;
-    bottom: 50px;
     box-shadow: none;
-    height: 75rem;
-    width: 100%;
-    margin: 150px auto;
-}
-
-.login-title{
-    font-family: 'Roboto';
-    letter-spacing: 1.5px;
+    margin: 5rem 0;
     text-align: center;
 }
 
-.login-button {
+.join-box{
+    box-shadow: none;
+    margin: 5rem 0;
+}
+
+.login-join-title{
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+.login-join-button {
 	--ion-color-primary: #0161b0;
 	--ion-color-primary-rgb: 1,97,176;
 	--ion-color-primary-contrast: #ffffff;
 	--ion-color-primary-contrast-rgb: 255,255,255;
 	--ion-color-primary-shade: #01559b;
 	--ion-color-primary-tint: #1a71b8;
-
-    position: relative;
-    top: 1.5rem;
 }
 
 .visibility-button{
-    --ion-color-primary: #ffff;
+    --ion-color-primary: #ffffff;
 	--ion-color-primary-rgb: 1,97,176;
-	--ion-color-primary-contrast: #000;
+	--ion-color-primary-contrast: #000000;
 	--ion-color-primary-contrast-rgb: 255,255,255;
-	--ion-color-primary-shade: #01559b;
-	--ion-color-primary-tint: #1a71b8;
+	--ion-color-primary-shade: #ffffff;
+	--ion-color-primary-tint: #87898a;
 
     position: relative;
     top: 2rem;
 }
 
-.multi-text{
-    text-align: left;
-    position: relative;
-    top: 124px;
-    left: 102px;
-    font-size: 20px;
-    font-weight: 900;
-    font-family: Arial, Helvetica, sans-serif;
+.forgot-password{
+    color: #0161b0;
+    text-align: center;
 }
 
+.join-conference-btn{
+    --border-color: rgb(199, 37, 37);
+    color: #000000;
+}
 
+.error-login{
+    font-size: 14px;
+}
 
-/* Nav Bar */
+/* Login Box Animation */
+
+.login-box {
+    animation: slide-up 0.3s ease;
+  }
+  
+.join-box {
+    animation: slide-down 0.3s ease;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(10%);
+    }
+    to {
+        transform: translateY(0);
+    }
+    }
+
+@keyframes slide-up {
+from {
+    transform: translateY(-10%);
+}
+to {
+    transform: translateY(0);
+}
+}
 

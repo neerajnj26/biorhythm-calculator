@@ -1,65 +1,57 @@
-import React, { useState } from 'react';
-import "../theme/basic.css"
+import { useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import {eye , eyeOff} from "ionicons/icons"
 import { IonText, IonGrid, IonCol, IonRow, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonLabel, IonNote } from '@ionic/react';
-import { useNavigate } from 'react-router';
+import "../theme/basic.css"
 
-
-const LoginBox = ({ onJoinConferenceClick }) => {
-    const [username, setUsername] = useState('')
+const JoinConference = ({onBackClick}) => {
+    const [confID, setConfID] = useState('')
     const [password, setPassword] = useState('')
-    const [showPassword, setShowPassword] = useState(false)
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
 
-    const navigate = useNavigate()
-
     const togglePasswordVisibility = () => {
-      setShowPassword(!showPassword);
+        setShowPassword(!showPassword);
     };
-    
-    const loginHandle = () => {
-      if (!username || !password) {
-        setError('Please enter both Username and Password.');
+
+    const joinHandle = () => {
+      if (!confID || !password) {
+        setError('Please enter both Conference ID and Password.');
         return;
       }
   
       // Perform your authentication logic here
-      const validUsername = 'example';
-      const validPassword = 'password';
+      const validConfId = 'confid';
+      const validPassword = 'password1';
   
-      if (username === validUsername && password === validPassword) {
+      if (confID === validConfId && password === validPassword) {
         // Successful login, navigate to the dashboard
         setError('')
-        navigate('/dashboard')
+        console.log('You joined the conference')
       } else {
         // Invalid credentials, display error message
-        setError('Invalid username or password.');
+        setError('Invalid Conference ID or Password.');
       }
     };
-    
-    const handleForgotPassword = () => {
-      console.log('Forgot Password clicked');
-      // Add your logic for handling the forgot password functionality here
-    };
+
 
     return (
-    <IonCard className="login-box ion-text-center">
+    <IonCard className="join-box ion-text-center">
       <IonCardHeader>
-        <IonCardTitle className="login-join-title">Login</IonCardTitle>
+        <IonCardTitle className="login-join-title">Join Conference</IonCardTitle>
       </IonCardHeader>
       <IonCardContent>
         <IonGrid>
           <IonRow>
             <IonCol size='12'>
               <IonItem>
-                <IonLabel position="stacked">Web Account</IonLabel>
+                <IonLabel position="stacked">Conference ID</IonLabel>
                 <IonInput
                   type="text"
-                  value={username}
-                  onIonChange={(event) => setUsername(event.detail.value)}
+                  value={confID}
+                  onIonChange={(event) => setConfID(event.detail.value)}
                 />
-                <IonNote slot="helper">Enter a valid username</IonNote>
+                <IonNote slot="helper">Enter meeting ID</IonNote>
               </IonItem>
             </IonCol>
           </IonRow>
@@ -78,34 +70,19 @@ const LoginBox = ({ onJoinConferenceClick }) => {
                   onClick={togglePasswordVisibility}>
                   <IonIcon icon={showPassword ? eye : eyeOff} />
                 </IonButton>
-                <IonNote slot="helper">Enter your password</IonNote>
+                <IonNote slot="helper">Enter meeting password</IonNote>
               </IonItem>
             </IonCol>
           </IonRow>
-          {error && <IonText style={{textAlign:'left'}} className='error-login' color="danger">{error}</IonText>}
+          {error && <IonText className='error-login' color="danger">{error}</IonText>}
           <IonRow>
             <IonCol size="12">
               <IonButton
                 className="login-join-button"
                 expand="full"
-                onClick={loginHandle}>
-                LOGIN
+                onClick={joinHandle}>
+                JOIN CONFERENCE
               </IonButton>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol size='12'>
-            <IonItem lines="none" className="forgot-password">
-                <IonLabel
-                  onClick={handleForgotPassword}>
-                  Forgot Password?
-                </IonLabel>
-              </IonItem>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol size='12'>
-              <IonLabel color='medium'>Use Conference ID to Join Conference</IonLabel>
             </IonCol>
           </IonRow>
           <IonRow>
@@ -114,8 +91,8 @@ const LoginBox = ({ onJoinConferenceClick }) => {
                 color='light'
                 className="join-conference-btn"
                 expand="full"
-                onClick={ onJoinConferenceClick }>
-                JOIN CONFERENCE
+                onClick={onBackClick}>
+                BACK TO LOGIN
               </IonButton>
             </IonCol>
           </IonRow>
@@ -125,5 +102,4 @@ const LoginBox = ({ onJoinConferenceClick }) => {
     );
 }
 
-export default LoginBox;
-
+export default JoinConference;

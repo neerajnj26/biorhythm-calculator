@@ -1,23 +1,36 @@
 import React from 'react';
-import {IonApp, setupIonicReact } from '@ionic/react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+import {IonApp, IonCol, IonContent, IonGrid, IonHeader, IonRow, IonTitle, IonToolbar, setupIonicReact } from '@ionic/react';
 import "@ionic/react/css/core.css"
-import LoginBox from './components/LoginBox';
-import MenuBar from './components/MenuBar';
-import Logo from './components/Logo';
-import Header from './components/Header';
+import LoginPage from './components/LoginPage';
+import DashboardPage from './components/Dashboard/DashboardPage';
 
 setupIonicReact();
 
 
 const App = () => {
   return (
-    <IonApp>
-        <MenuBar />
-        <Header />
-        <Logo />
-        <LoginBox />
-    </IonApp>
+    <Router>
+      <Routes>
+        <Route exact path="/" component={LoginPage} />
+        <Route path="/dashboard" component={DashboardPage} />
+      </Routes>
+    </Router>
   );
 };
 
 export default App;
+
+
+/* <IonApp>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>MVCS</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+          <LoginPage />
+          
+      </IonContent>
+    </IonApp> */
